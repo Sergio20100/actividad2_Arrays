@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="../css/login.css" rel="stylesheet">
+    <title>Inicio de Sesión</title>
+</head>
+<body class="text-center">
+    
+    <main class="form-signin">
+      <form id="formulario">
+        <!-- <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" > -->
+        <i class="bi bi-person-circle fs-1"></i>
+        <h1 class="h3 mb-3 fw-normal">Iniciar sesion</h1>
+    
+        <div class="form-floating">
+          <input type="email" class="form-control" id="correo" placeholder="name@example.com">
+          <label for="correo">Correo electronico</label>
+        </div>
+        <div class="form-floating ">
+          <input type="password" class="form-control" id="password" placeholder="Contraseña">
+          <label for="password">Contraseña</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Iniciar sesion</button>
+        <button class="w-100 btn btn-lg btn-secondary mt-3" type="button" id="registro">Registrarse</button>
+        <p class="mt-5 mb-3 text-muted">&copy; Desing by smendoza - 2024</p>
+      </form>
+      <form id="formulario-registro">
+        <!-- <img class="mb-4" src="/docs/5.0/assets/brand/bootstrap-logo.svg" alt="" > -->
+        <i class="bi bi-person-circle fs-1"></i>
+        <h1 class="h3 mb-3 fw-normal">Registro de usuario</h1>
+    
+        <div class="form-floating">
+          <input type="email" class="form-control" id="correoRegistro" placeholder="name@colombia.com">
+          <label for="correoRegistro">Correo electronico</label>
+        </div>
+        <div class="form-floating ">
+          <input type="password" class="form-control" id="passwordRegistro" placeholder="Contraseña">
+          <label for="passwordRegistro">Contraseña</label>
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Registrarse</button>
+        <p class="mt-5 mb-3 text-muted">&copy; Desing by smendoza - 2024</p>
+      </form>
+    </main>
+    
+    
+        
+      </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../JS/login.js"></script>
+</html>
