@@ -38,6 +38,17 @@ async function login(data){
     }
 }
 
+async function registroExitoso(){
+    
+        await Swal.fire({
+            title: "REGISTRO EXITOSO",
+            text: "Se ha creado el usuario",
+            icon: "success"
+          })
+}
+
+
+
 function main(users){
     const form = document.getElementById('formulario')
     const form_registro = document.getElementById('formulario-registro')
@@ -64,6 +75,7 @@ function main(users){
         registro.addEventListener('click',(event)=>{
             form.hidden = true
             form_registro.hidden = false
+            
             form_registro.addEventListener('submit',(event)=>{
                 event.preventDefault()
                 const data = {
@@ -73,6 +85,11 @@ function main(users){
                 console.log(data);
                 users.push(data)
                 localStorage.setItem('users',JSON.stringify(users))
+                registroExitoso()
+                .finally(()=>{
+                    form.hidden = false
+                    form_registro.hidden = true
+                })             
             })
         })
     )
