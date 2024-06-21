@@ -1,0 +1,9 @@
+.card-container{
+ display: grid;
+ grid-template-columns: auto;
+ grid-template-rows: auto;   
+}
+body{
+    height: 100vh;
+    width: 100vw;
+}

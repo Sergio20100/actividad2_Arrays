@@ -17,6 +17,27 @@ async function cargarUsuarios(){
         return users.some(user=>(user.email === data.email && user.password === data.password)) ? true : false
 }
 
+async function login(data){
+    if(validarUsuarios(users,data)){
+        console.log("exitoso")
+        await Swal.fire({
+            title: "INICIO DE SESION EXITOSO",
+            text: "Bienvenido...",
+            icon: "success"
+          })
+          localStorage.setItem('login',JSON.stringify(true))
+        window.location.replace('index.html')
+    }else{
+        console.log("fallo")
+        await Swal.fire({
+            title: "INICIO DE SESION",
+            text: "Credenciales invalidas",
+            icon: "error",
+            button:[false]
+          })
+    }
+}
+
 function main(users){
     const form = document.getElementById('formulario')
     const form_registro = document.getElementById('formulario-registro')
@@ -34,6 +55,9 @@ function main(users){
             }
             console.log(data);
             console.log(validarUsuarios(users,data));
+            login(data).finally((d)=>{
+                console.log("done")
+            })
         })
     )
     registro && (
@@ -48,6 +72,7 @@ function main(users){
                 }
                 console.log(data);
                 users.push(data)
+                localStorage.setItem('users',JSON.stringify(users))
             })
         })
     )
